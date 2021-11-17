@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="df6a2a00-af19-44ae-8199-8326b859b06b" name="Changes" comment="conditional statements">
+    <list default="true" id="df6a2a00-af19-44ae-8199-8326b859b06b" name="Changes" comment="conditional statements2">
+      <change afterPath="$PROJECT_DIR$/conditionalStatements3.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conditionalStatements.php" beforeDir="false" afterPath="$PROJECT_DIR$/conditionalStatements.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,6 +16,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="PhpDebugGeneral" listening_started="true" />
   <component name="PhpServers">
     <servers>
       <server host="learning.zxc" id="9fb5531c-bcd7-4e1f-8510-5b9b2188d676" name="learning.zxc" />
@@ -30,7 +31,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../new/src/Template/Action/CreateRecordPageTemplate.php" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager">
@@ -48,6 +49,8 @@
       <updated>1637091226567</updated>
       <workItem from="1637091227813" duration="4872000" />
       <workItem from="1637132118010" duration="2061000" />
+      <workItem from="1637179131128" duration="8545000" />
+      <workItem from="1637177358192" duration="378000" />
     </task>
     <task id="LOCAL-00001" summary="conditional statements">
       <created>1637091672949</created>
@@ -63,7 +66,21 @@
       <option name="project" value="LOCAL" />
       <updated>1637097408247</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="conditional statements">
+      <created>1637173534842</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1637173534842</updated>
+    </task>
+    <task id="LOCAL-00004" summary="conditional statements2">
+      <created>1637176679149</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1637176679149</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -83,6 +100,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="conditional statements" />
-    <option name="LAST_COMMIT_MESSAGE" value="conditional statements" />
+    <MESSAGE value="conditional statements2" />
+    <option name="LAST_COMMIT_MESSAGE" value="conditional statements2" />
   </component>
 </project>
