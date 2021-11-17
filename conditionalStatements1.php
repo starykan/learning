@@ -19,10 +19,8 @@
     <?php
     $digit=$_POST['digit'];
     if ($digit!=0){
-
         if ($digit<0) $color = "text-danger";
         else $color = "text-success";
-
     }
     else $color = "text-warning";?>
 </form>
