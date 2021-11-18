@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="df6a2a00-af19-44ae-8199-8326b859b06b" name="Changes" comment="conditional statements3">
-      <change beforePath="$PROJECT_DIR$/conditionalStatements1.php" beforeDir="false" afterPath="$PROJECT_DIR$/conditionalStatements1.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conditionalStatements2.php" beforeDir="false" afterPath="$PROJECT_DIR$/conditionalStatements2.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conditionalStatements3.php" beforeDir="false" afterPath="$PROJECT_DIR$/conditionalStatements3.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/conditionalStatements4.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,7 +31,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../new/src/Template/Action/CreateRecordPageTemplate.php" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../temptation/src/Repository/ProductRepository.php" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager">
@@ -51,7 +50,8 @@
       <workItem from="1637091227813" duration="4872000" />
       <workItem from="1637132118010" duration="2061000" />
       <workItem from="1637179131128" duration="8545000" />
-      <workItem from="1637177358192" duration="1289000" />
+      <workItem from="1637177358192" duration="1377000" />
+      <workItem from="1637256514134" duration="2466000" />
     </task>
     <task id="LOCAL-00001" summary="conditional statements">
       <created>1637091672949</created>
@@ -95,7 +95,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637178379986</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="conditional statements3">
+      <created>1637178652672</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1637178652672</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
