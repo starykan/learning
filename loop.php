@@ -21,6 +21,7 @@ for($i=1; $i<=10; $i++) {
     echo ' <tr style="background-color: rgb('.$w.','.$w.','.$w.')">';
     echo '<td>'.$i.'</td>';
     echo '<td>'.mt_rand(0,100).'</td>';
+    echo '</tr>';
 }
 echo '</table>';
 ?>
