@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="df6a2a00-af19-44ae-8199-8326b859b06b" name="Changes" comment="conditional statements4" />
+    <list default="true" id="df6a2a00-af19-44ae-8199-8326b859b06b" name="Changes" comment="loop">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -49,6 +51,7 @@
       <workItem from="1637179131128" duration="8545000" />
       <workItem from="1637177358192" duration="1377000" />
       <workItem from="1637256514134" duration="2985000" />
+      <workItem from="1637313382560" duration="12656000" />
     </task>
     <task id="LOCAL-00001" summary="conditional statements">
       <created>1637091672949</created>
@@ -106,7 +109,21 @@
       <option name="project" value="LOCAL" />
       <updated>1637259017727</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="conditional statements4">
+      <created>1637313694440</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1637313694440</updated>
+    </task>
+    <task id="LOCAL-00010" summary="loop">
+      <created>1637327450138</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1637327450138</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -129,6 +146,7 @@
     <MESSAGE value="conditional statements2" />
     <MESSAGE value="conditional statements3" />
     <MESSAGE value="conditional statements4" />
-    <option name="LAST_COMMIT_MESSAGE" value="conditional statements4" />
+    <MESSAGE value="loop" />
+    <option name="LAST_COMMIT_MESSAGE" value="loop" />
   </component>
 </project>
