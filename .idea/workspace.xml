@@ -51,7 +51,8 @@
       <workItem from="1637179131128" duration="8545000" />
       <workItem from="1637177358192" duration="1377000" />
       <workItem from="1637256514134" duration="2985000" />
-      <workItem from="1637313382560" duration="12656000" />
+      <workItem from="1637313382560" duration="13541000" />
+      <workItem from="1637341891023" duration="88000" />
     </task>
     <task id="LOCAL-00001" summary="conditional statements">
       <created>1637091672949</created>
@@ -123,7 +124,35 @@
       <option name="project" value="LOCAL" />
       <updated>1637327450138</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="loop">
+      <created>1637327807532</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1637327807532</updated>
+    </task>
+    <task id="LOCAL-00012" summary="loop">
+      <created>1637327824983</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1637327824983</updated>
+    </task>
+    <task id="LOCAL-00013" summary="loop">
+      <created>1637328039165</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1637328039165</updated>
+    </task>
+    <task id="LOCAL-00014" summary="loop">
+      <created>1637341968593</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1637341968593</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
