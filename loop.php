@@ -18,6 +18,7 @@ $q=255/9;
 echo '<table>';
 for($i=1; $i<=10; $i++) {
     $w = ($i-1) * $q;
+    floor($w);
     echo ' <tr style="background-color: rgb('.$w.','.$w.','.$w.')">';
     echo '<td>'.$i.'</td>';
     echo '<td>'.mt_rand(0,100).'</td>';
