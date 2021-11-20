@@ -42,8 +42,8 @@
     $digit4=$_POST['digit4'];
 
     if ($digit1 > $digit2 && $digit1 > $digit3 && $digit1 > $digit4) echo $digit1;
-    elseif ($digit2 > $digit1 && $digit2 > $digit3 && $digit2 > $digit4) echo $digit2;
-    elseif ($digit3 > $digit1 && $digit3 > $digit2 && $digit3 > $digit4) echo $digit3;
+    elseif ($digit2 > $digit3 && $digit2 > $digit4) echo $digit2;
+    elseif ($digit3 > $digit4) echo $digit3;
     else echo $digit4;
        ?>
 </form>

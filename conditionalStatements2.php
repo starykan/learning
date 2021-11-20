@@ -33,12 +33,12 @@
     $digit1=$_POST['digit1'];
     $digit2=$_POST['digit2'];
     $digit3=$_POST['digit3'];
-    if ($digit1 > $digit2 || $digit1 > $digit3 ) $max = $digit1;
-    elseif ($digit2 > $digit1 || $digit2 > $digit3) $max = $digit2;
+    if ($digit1 > $digit2 && $digit1 > $digit3 ) $max = $digit1;
+    elseif ($digit2 > $digit3) $max = $digit2;
     else $max = $digit3;
 
-    if ($digit1 < $digit2 || $digit1 < $digit3 ) $min = $digit1;
-    elseif ($digit2 < $digit1 || $digit2 < $digit3) $min = $digit2;
+    if ($digit1 < $digit2 && $digit1 < $digit3 ) $min = $digit1;
+    elseif ($digit2 < $digit3) $min = $digit2;
     else $min = $digit3;
 
     $result=$max+$min;
