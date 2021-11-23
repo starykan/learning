@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="df6a2a00-af19-44ae-8199-8326b859b06b" name="Changes" comment="loop">
+    <list default="true" id="df6a2a00-af19-44ae-8199-8326b859b06b" name="Changes" comment="fixed">
+      <change afterPath="$PROJECT_DIR$/array/array1.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conditionalStatements2.php" beforeDir="false" afterPath="$PROJECT_DIR$/conditionalStatements2.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conditionalStatements3.php" beforeDir="false" afterPath="$PROJECT_DIR$/conditionalStatements3.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +57,8 @@
       <workItem from="1637341991084" duration="200000" />
       <workItem from="1637427672364" duration="3752000" />
       <workItem from="1637433340879" duration="335000" />
-      <workItem from="1637434501131" duration="306000" />
+      <workItem from="1637434501131" duration="633000" />
+      <workItem from="1637687448684" duration="8624000" />
     </task>
     <task id="LOCAL-00001" summary="conditional statements">
       <created>1637091672949</created>
@@ -179,7 +179,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637427729822</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="fixed">
+      <created>1637434868400</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1637434868400</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -203,6 +210,7 @@
     <MESSAGE value="conditional statements3" />
     <MESSAGE value="conditional statements4" />
     <MESSAGE value="loop" />
-    <option name="LAST_COMMIT_MESSAGE" value="loop" />
+    <MESSAGE value="fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed" />
   </component>
 </project>
