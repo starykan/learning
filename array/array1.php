@@ -18,7 +18,5 @@ foreach($a as $k => $v)
         $min_key = $k;
     }
 }
-$l=$max_key - $min_key;
 
-$na = array_slice($a,$min_key,$l);
-$res = array_product($na);
+$res = array_product(array_slice($a,$min_key,$max_key - $min_key));
