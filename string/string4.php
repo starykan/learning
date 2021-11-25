@@ -7,7 +7,8 @@ $text =
 <p>Symfony Philosophy. Embracing and promoting professionalism, best practices, standardization and interoperability of applications. </p>';
 
 $text = strip_tags($text);
-
-foreach (count_chars($text, 1) as $i => $val) {
-    echo "\"" , chr($i) , "\" встречается в строке $val раз(а).'<br>'>";
+$temp = count_chars($text, 1);
+asort($temp);
+foreach ($temp as $i => $val) {
+    echo "\"" , chr($i) , "\" встречается в строке $val раз(а).'<br>";
 }
