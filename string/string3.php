@@ -7,11 +7,14 @@ $text =
 <p>Symfony Community. A passionate group of over 600,000 developers from more than 120 countries, all committed to helping PHP surpass the impossible. </p>
 <p>Symfony Philosophy. Embracing and promoting professionalism, best practices, standardization and interoperability of applications. </p>';
 
-$pc = substr_count($text,'. ');
-$parc = substr_count($text,'<p>');
-$wc = str_word_count($text);
-$lc = count_chars($text);
-echo 'predlozenia '.$pc.'</br>';
-echo 'paragraph '.$parc.'</br>';
-echo 'word '.$wc.'</br>';
-echo 'symbol '.$lc;
+$text = strip_tags($text);
+$text1 = str_replace(',',' ', $text);
+$text2 = str_replace('.',' ', $text1);
+$arr = explode(" ", $text2);
+$max = $arr[0];
+for ($i=0; $i<count($arr); $i++) {
+    if(strlen($arr[$i]) > strlen($max)){
+        $max = $arr[$i];
+    }
+}
+echo $max;
