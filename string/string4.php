@@ -8,7 +8,7 @@ $text =
 
 $text = strip_tags($text);
 $temp = count_chars($text, 1);
-asort($temp);
+//asort($temp);
 foreach ($temp as $i => $val) {
     echo "\"" , chr($i) , "\" встречается в строке $val раз(а).<br>";
 }
