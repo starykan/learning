@@ -20,5 +20,6 @@ foreach($a as $k => $v)
 }
 if ($max_key > $min_key){
     $res = array_product(array_slice($a,$min_key,$max_key - $min_key));}
-else
+elseif ($max_key < $min_key)
     $res = array_product(array_slice($a,$min_key,$min_key - $max_key));
+else echo 'Результата нет.';
