@@ -1,5 +1,4 @@
 <?php
-error_reporting($error_level = 1);
 $a = [[1,2,4],
       [5,4,9],
       [2,0,2]];
@@ -12,5 +11,5 @@ for($j=0; $j < $colCount; $j++) {
         $s *= $a[$i][$j];
     }
     if ($s == 0){ unset($s);}
-    echo $s, '<br>';
+    else echo $s, '<br>';
 }
