@@ -15,7 +15,7 @@ function getContent($data)
 $all = 30;
 $lim = 3;
 $prev = 1;
-$curr_link = $_GET['page'];
+$curr_link = $_GET['page']??1;
 $link = "http://learning.zxc/pagination/functions.php";
 
 function pagination($all, $lim, $prev, $curr_link, $link)
@@ -61,7 +61,7 @@ function paginationData($data, $curr_link, $lim): string
 
 function charChange($newData)
 {
-    return preg_replace('/(задача)/iu', '<span style="color:#ff0000">$1</span>', $newData);
+    return preg_replace('/задача/iu', '<span style="color:#ff0000">$0</span>', $newData);
 }
 
 function makeFat($newData)
@@ -75,5 +75,6 @@ $newData = charChange($newData);
 $newData = makeFat($newData);
 echo($newData);
 getContent($newData);
+
 pagination($all, $lim, $prev, $curr_link, $link);
 
