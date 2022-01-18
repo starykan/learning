@@ -1,0 +1,106 @@
+//////////////////////////////////////расписание занятий конкретной группы
+select groupstudents.groupnumber, lessontypes.lessontype, lessons.hours, lessons.lessondate, lessons.lessontime,
+buildings.address, classrooms.classroomnumber,teachers.surname, teachers.name, teachers.middlename
+from lessons 
+join groupteachers on groupteachers.idgroupteacher = lessons.idgroupteacher
+join groupstudents on groupstudents.idgroup = groupteachers.idgroup
+join subjecthours on subjecthours.idsubjecthours = groupteachers.idsubjecthours
+join lessontypes on lessontypes.idlessontype = subjecthours.idsubjecthours
+join classrooms on classrooms.idclassroom = lessons.idclassroom
+join buildings on buildings.idbuilding = classrooms.idbuilding
+join teachers on teachers.idteacher = groupteachers.idteacher
+where groupstudents.idgroup = 2;
+
+///////////////////////////////////////////расписание занятий конкретного преподавателя
+select teachers.surname, teachers.name, teachers.middlename,
+lessontypes.lessontype, lessons.hours, lessons.lessondate, lessons.lessontime,
+buildings.address, classrooms.classroomnumber, groupstudents.groupnumber
+
+from teachers
+join groupteachers on teachers.idteacher = groupteachers.idteacher
+join groupstudents on groupstudents.idgroup = groupteachers.idgroup
+join lessons on lessons.idgroupteacher = groupteachers.idgroupteacher
+join classrooms on classrooms.idclassroom = lessons.idclassroom
+join buildings on buildings.idbuilding = classrooms.idbuilding
+join subjecthours on subjecthours.idsubjecthours = groupteachers.idsubjecthours
+join lessontypes on lessontypes.idlessontype = subjecthours.idsubjecthours
+where teachers.idteacher = 1
+
+///////////////////////////////////////////информация для каждой группы об общем количестве часов по дисциплинам и видам занятий
+SELECT groupstudents.groupnumber, subjects.subject, subjecthours.hours, lessontypes.lessontype
+
+from groupstudents
+join groupteachers on groupteachers.idgroup = groupstudents.idgroup
+join subjecthours on subjecthours.idsubjecthours = groupteachers.idsubjecthours
+join lessontypes on lessontypes.idlessontype = subjecthours.idlessontype
+join curriculumsubjects on curriculumsubjects.idsubject = subjecthours.idsubject
+join subjects on subjects.idsubject = curriculumsubjects.idsubject
+where groupstudents.idgroup = 1
+
+/////////////////////////////////////////сведения о проведенных преподавателем занятиях за определенный период времени 
+select teachers.surname, teachers.name, teachers.middlename, subjecthours.hours, subjects.subject
+from lessons
+
+join groupteachers on lessons.idgroupteacher = groupteachers.idgroupteacher 
+join teachers on teachers.idteacher = groupteachers.idteacher
+join subjecthours on subjecthours.idsubjecthours = groupteachers.idsubjecthours 
+join curriculumsubjects on curriculumsubjects.idsubject = subjecthours.idsubject 
+join subjects on subjects.idsubject = curriculumsubjects.idsubject 
+where lessons.lessondate between '2020-05-04' and '2020-05-06' and teachers.idteacher = 1;
+
+/////////////////////////////////////////Среднее количество часов занятий в день по аудиториям за определенный период времени
+SELECT classrooms.classroomnumber, AVG(hours) FROM lessons
+join classrooms on classrooms.idclassroom = lessons.idclassroom
+where lessons.lessondate between '2020-05-04' and '2020-05-06' and classrooms.classroomnumber = 53
+
+/////////////////////////////////////////Средняя загрузка студентов в день за определенный период времени
+SELECT groupstudents.groupnumber ,AVG(hours) FROM lessons
+join groupteachers on groupteachers.idgroupteacher = lessons.idgroupteacher
+join groupstudents on groupstudents.idgroup = groupteachers.idgroup
+where lessons.lessondate between '2020-05-04' and '2020-05-06' and groupstudents.groupnumber = 'J1'
+
+///////////////////////////////////////Общие итоги о количестве проведенных часов по дисциплинам и видам занятий за определенный период времени:
+по группам
+
+SELECT any_value (groupstudents.groupnumber), SUM (lessons.hours), lessontypes.lessontype, subjects.subject
+
+FROM groupstudents
+join groupteachers on groupstudents.idgroup = groupteachers.idgroup
+join lessons on groupteachers.idgroupteacher = lessons.idgroupteacher
+join subjecthours on groupteachers.idsubjecthours = subjecthours.idsubjecthours
+join lessontypes on lessontypes.idlessontype = subjecthours.idlessontype
+join subjects on subjects.idsubject = subjecthours.idsubject
+where lessons.lessondate between '2020-05-04' and '2020-05-06'
+group by groupstudents.idgroup, subjects.idsubject, lessontypes.idlessontyp
+
+по преподавателям
+SELECT any_value (teachers.surname),any_value (teachers.name), SUM(lessons.hours), lessontypes.lessontype, subjects.subject
+FROM teachers
+join groupteachers on teachers.idteacher = groupteachers.idteacher
+join lessons on groupteachers.idgroupteacher = lessons.idgroupteacher
+join subjecthours on groupteachers.idsubjecthours = subjecthours.idsubjecthours
+join lessontypes on lessontypes.idlessontype = subjecthours.idlessontype
+join subjects on subjects.idsubject = subjecthours.idsubject
+where lessons.lessondate between '2020-05-04' and '2020-05-06'
+group by subjects.idsubject, lessontypes.idlessontype
+
+
+по аудиториям
+SELECT any_value (classrooms.classroomnumber), SUM(lessons.hours), lessontypes.lessontype, subjects.subject
+FROM classrooms
+join lessons on lessons.idclassroom = classrooms.idclassroom
+join groupteachers on groupteachers.idgroupteacher = lessons.idgroupteacher
+join subjecthours on groupteachers.idsubjecthours = subjecthours.idsubjecthours
+join lessontypes on lessontypes.idlessontype = subjecthours.idlessontype
+join subjects on subjects.idsubject = subjecthours.idsubject
+where lessons.lessondate between '2020-05-04' and '2020-05-06'
+group by subjects.idsubject, lessontypes.idlessontype
+
+///////////////////////////////////Информация об остатке часов по дисциплинам и видам занятий (общее количество часов минус количество часов занятий в расписании)
+SELECT sum(subjecthours.hours),sum(lessons.hours), (sum(subjecthours.hours)-coalesce(sum(lessons.hours),0)),subjects.subject, lessontypes.lessontype
+FROM subjecthours
+join groupteachers on groupteachers.idsubjecthours = subjecthours.idsubjecthours
+left join lessons on lessons.idgroupteacher = groupteachers.idgroupteacher 
+join lessontypes on lessontypes.idlessontype = subjecthours.idlessontype
+join subjects on subjects.idsubject = subjecthours.idsubject
+group by lessontypes.idlessontype, subjects.idsubject;
