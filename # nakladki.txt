@@ -1,0 +1,45 @@
+#Накладки преподавателя
+SELECT all_lessons.idlesson, all_lessons.lessondate, all_lessons.lessontime, teachers.surname, teachers.name,teachers.middlename  FROM  lessons all_lessons
+	JOIN groupteachers all_gt ON all_gt.idgroupteacher = all_lessons.idgroupteacher
+	JOIN teachers ON teachers.idteacher = all_gt.idteacher
+	JOIN(
+		SELECT  original_l.*, original_gt.idteacher   FROM  lessons original_l
+        JOIN groupteachers original_gt ON original_gt.idgroupteacher = original_l.idgroupteacher
+        WHERE EXISTS( 
+			SELECT  *  FROM lessons nested_l
+				JOIN groupteachers nested_gt ON nested_gt.idgroupteacher = nested_l.idgroupteacher
+            WHERE
+					nested_l.lessondate = original_l.lessondate
+                    AND nested_gt.idteacher = original_gt.idteacher
+                    AND nested_l.idlesson != original_l.idlesson
+                    AND nested_l.lessontime <= original_l.lessontime
+                    AND date_add(nested_l.lessontime, interval nested_l.hours * 0.75*60 minute) > original_l.lessontime
+		)
+	)second_conflict  ON all_lessons.lessondate = second_conflict.lessondate
+		AND all_gt.idteacher = second_conflict.idteacher
+		AND all_lessons.lessontime <= second_conflict.lessontime
+		AND date_add(all_lessons.lessontime, interval all_lessons.hours * 0.75*60 minute) > second_conflict.lessontime
+        group by all_lessons.idlesson
+
+#Форточка
+SELECT all_lessons.idlesson, all_lessons.lessondate, all_lessons.lessontime, teachers.surname, teachers.name,teachers.middlename  FROM  lessons all_lessons
+	JOIN groupteachers all_gt ON all_gt.idgroupteacher = all_lessons.idgroupteacher
+	JOIN teachers ON teachers.idteacher = all_gt.idteacher
+	JOIN(
+		SELECT  original_l.*, original_gt.idteacher   FROM  lessons original_l
+        JOIN groupteachers original_gt ON original_gt.idgroupteacher = original_l.idgroupteacher
+        WHERE EXISTS( 
+			SELECT  *  FROM lessons nested_l
+				JOIN groupteachers nested_gt ON nested_gt.idgroupteacher = nested_l.idgroupteacher
+            WHERE
+					nested_l.lessondate = original_l.lessondate
+                    AND nested_gt.idteacher = original_gt.idteacher
+                    AND nested_l.idlesson != original_l.idlesson
+                    AND nested_l.lessontime <= original_l.lessontime
+                    AND date_add(nested_l.lessontime, interval nested_l.hours * 0.75*60+60 minute) < original_l.lessontime
+		)
+	)second_conflict  ON all_lessons.lessondate = second_conflict.lessondate
+		AND all_gt.idteacher = second_conflict.idteacher
+		AND all_lessons.lessontime <= second_conflict.lessontime
+		AND date_add(all_lessons.lessontime, interval all_lessons.hours * 0.75*60 minute) <= second_conflict.lessontime
+        group by all_lessons.idlesson
